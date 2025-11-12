@@ -40,6 +40,12 @@ const CodingPresentation = () => {
       title: "So... What Exactly IS Coding?",
       icon: Code,
       question: "Have you ever given someone directions to your house?",
+      bg: "from-emerald-950 via-teal-950 to-cyan-950",
+      layout: "minimal"
+    },
+    {
+      title: "Coding is Like Giving Directions",
+      icon: Code,
       content: [
         "🗣️ 'Turn left at the junction'",
         "🗣️ 'Go straight for 5 minutes'",
@@ -58,6 +64,13 @@ const CodingPresentation = () => {
       icon: Lightbulb,
       question: "What's your favorite app or game?",
       subquestion: "Instagram? WhatsApp? Candy Crush? FIFA?",
+      bg: "from-blue-950 via-indigo-950 to-violet-950",
+      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=500&fit=crop",
+      layout: "minimal"
+    },
+    {
+      title: "They All Started Like You",
+      icon: Lightbulb,
       content: [
         "💎 Every single one was built by someone who learned to code.",
         "",
@@ -73,6 +86,12 @@ const CodingPresentation = () => {
       title: "Why Does Coding Matter?",
       icon: Globe,
       question: "What if I told you coding powers almost EVERYTHING around you?",
+      bg: "from-orange-950 via-red-950 to-rose-950",
+      layout: "minimal"
+    },
+    {
+      title: "Coding Powers Everything",
+      icon: Globe,
       content: [
         "📱 Your smartphone & every app on it",
         "🎮 Video games like FIFA, Call of Duty",
@@ -92,6 +111,12 @@ const CodingPresentation = () => {
       icon: Brain,
       question: "What problems do you see in your community?",
       subquestion: "Bad roads? Difficulty paying bills? Finding good schools?",
+      bg: "from-rose-950 via-pink-950 to-fuchsia-950",
+      layout: "minimal"
+    },
+    {
+      title: "You Can Build Solutions!",
+      icon: Brain,
       content: [
         "💡 What if YOU could build an app to solve one of these problems?",
         "",
@@ -108,6 +133,12 @@ const CodingPresentation = () => {
       title: "Let Me Ask You This:",
       icon: Rocket,
       question: "What do you want to be when you grow up?",
+      bg: "from-purple-950 via-indigo-950 to-blue-950",
+      layout: "minimal"
+    },
+    {
+      title: "Amazing Tech Careers",
+      icon: Rocket,
       content: [
         "💼 Software Developer – Build apps & websites",
         "🎮 Game Developer – Create the next FIFA or Fortnite",
@@ -195,6 +226,12 @@ const CodingPresentation = () => {
       title: "Let's Try Something!",
       icon: Code,
       question: "Want to see how easy coding can be?",
+      bg: "from-emerald-950 via-green-950 to-teal-950",
+      layout: "minimal"
+    },
+    {
+      title: "Your First Program!",
+      icon: Code,
       subquestion: "Here's your first 'program':",
       content: [
         "print('Hello, World!')",
@@ -290,6 +327,12 @@ const CodingPresentation = () => {
       title: "Your 30-Day Challenge",
       icon: Rocket,
       question: "Ready to transform your life?",
+      bg: "from-red-950 via-orange-950 to-amber-950",
+      layout: "minimal"
+    },
+    {
+      title: "Here's Your Challenge",
+      icon: Rocket,
       content: [
         "🎯 Choose ONE platform to start",
         "⏰ Code for 30 minutes daily",
@@ -310,6 +353,12 @@ const CodingPresentation = () => {
       title: "Your Future Starts Now",
       icon: Lightbulb,
       question: "What will YOU create?",
+      bg: "from-rose-800 via-pink-800 to-fuchsia-800",
+      layout: "minimal"
+    },
+    {
+      title: "Unlimited Possibilities",
+      icon: Lightbulb,
       content: [
         "The next viral game",
         "An app millions will use",
@@ -697,7 +746,7 @@ const CodingPresentation = () => {
       <button
         onClick={prevSlide}
         disabled={currentSlide === 0}
-        className={`fixed left-6 top-1/2 -translate-y-1/2 z-40 p-4 rounded-full font-semibold transition-all transform shadow-2xl ${
+        className={`fixed left-6 top-1/2 -translate-y-1/2 z-40 p-4 rounded-full font-semibold transition-all transform shadow-2xl opacity-30 hover:opacity-100 ${
           currentSlide === 0
             ? 'bg-gray-700/50 text-gray-500 cursor-not-allowed'
             : 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:from-blue-700 hover:to-cyan-700 hover:scale-110 hover:shadow-cyan-500/50'
@@ -710,7 +759,7 @@ const CodingPresentation = () => {
       <button
         onClick={nextSlide}
         disabled={currentSlide === slides.length - 1}
-        className={`fixed right-6 top-1/2 -translate-y-1/2 z-40 p-4 rounded-full font-semibold transition-all transform shadow-2xl ${
+        className={`fixed right-6 top-1/2 -translate-y-1/2 z-40 p-4 rounded-full font-semibold transition-all transform shadow-2xl opacity-30 hover:opacity-100 ${
           currentSlide === slides.length - 1
             ? 'bg-gray-700/50 text-gray-500 cursor-not-allowed'
             : 'bg-gradient-to-r from-orange-600 to-red-600 text-white hover:from-orange-700 hover:to-red-700 hover:scale-110 hover:shadow-orange-500/50'
