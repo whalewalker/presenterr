@@ -376,22 +376,23 @@ const CodingPresentation = () => {
       layout: "split"
     },
     {
+      title: "Goodbye! 👋",
+      icon: Sparkles,
+      gif: "https://media.giphy.com/media/Vccpm1O9gV1g4/giphy.gif",
+      bg: "from-purple-900 via-indigo-900 to-blue-900",
+      layout: "centered"
+    },
+    {
       title: "Thank You!",
       subtitle: "Let's Keep the Conversation Going",
       icon: Brain,
       question: "What questions do YOU have about coding?",
       content: [
-        "💬 Feel free to ask anything!",
-        "",
         "🌟 Remember:",
         "• Every coder started as a beginner",
         "• Mistakes are part of learning",
         "• Your curiosity is your greatest strength",
         "• The tech world needs YOUR unique perspective",
-        "",
-        "📧 Let's stay connected and support each other!",
-        "",
-        "🚀 'I can make anything happen, Just believe'"
       ],
       bg: "from-fuchsia-900 via-purple-900 to-indigo-900",
       gif: "https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif",
