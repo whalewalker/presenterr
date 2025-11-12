@@ -124,12 +124,18 @@ const CodingPresentation = () => {
     },
     {
       title: "Nigerian Tech Heroes",
+      icon: Users,
+      question: "Did you know Nigerians are building world-class tech companies?",
+    },
+    {
+      title: "Nigerian Tech Heroes",
       subtitle: "Shola Akinlade",
       icon: Users,
       hero: {
         name: "Shola Akinlade",
         achievement: "Co-founder & CEO of Paystack",
         company: "Paystack",
+        companyLogo: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Paystack_Logo.png",
         description: "Built a payment platform that sold to Stripe for $200M. Started by learning to code and solving a real problem in online payments across Africa.",
         image: "https://nairametrics.com/wp-content/uploads/2021/04/Shola-Akinlade.jpg?w=300&h=300&fit=crop",
         story: "Started coding to solve payment challenges faced by Nigerian businesses. His dedication turned Paystack into one of Africa's biggest tech success stories."
@@ -139,15 +145,16 @@ const CodingPresentation = () => {
     },
     {
       title: "Nigerian Tech Heroes",
-      subtitle: "Iyinoluwa Aboyeji",
+      subtitle: "Tosin Eniolorunda",
       icon: Users,
       hero: {
-        name: "Iyinoluwa Aboyeji",
-        achievement: "Co-founder of Andela & Flutterwave",
-        company: "Andela & Flutterwave",
-        description: "Created platforms that have trained thousands of developers and process billions in payments across Africa.",
-        image: "https://imageio.forbes.com/specials-images/imageserve/5a01fff0a7ea436b47b4ff7d/0x0.jpg?format=jpg&crop=1083,1082,x700,y80,safe&height=416&width=416&fit=bounds?w=300&h=300&fit=crop",
-        story: "Built Andela to train African developers and Flutterwave to revolutionize payments. Proving that African tech talent can compete globally."
+        name: "Tosin Eniolorunda",
+        achievement: "Founder & CEO of Moniepoint",
+        company: "Moniepoint",
+        companyLogo: "https://wp.logos-download.com/wp-content/uploads/2024/09/Moniepoint_Logo.svg?dl",
+        description: "Built Nigeria's largest digital banking platform, processing over ₦600 billion monthly and serving millions of businesses across Nigeria.",
+        image: "https://eu-west-2.graphassets.com/AxQ8YTi9LTCrOeR0pPuwfz/output=format:webp/MJeJv3KhS0Voc9mGagHR",
+        story: "Started Moniepoint to empower small businesses with digital banking. Today, it's one of Africa's fastest-growing fintech companies, transforming how businesses operate across Nigeria."
       },
       bg: "from-emerald-950 via-teal-950 to-cyan-950",
       layout: "hero"
@@ -160,6 +167,7 @@ const CodingPresentation = () => {
         name: "Odunayo Eweniyi",
         achievement: "Co-founder & COO of PiggyVest",
         company: "PiggyVest",
+        companyLogo: "https://www.techinafrica.com/wp-content/uploads/2019/08/piggyvest-main-logo-v2.png",
         description: "Built Nigeria's leading savings & investment platform, helping millions of Nigerians save money and build wealth.",
         image: "https://88lately.com/wp-content/uploads/2025/05/88Lately-bio-cover-1.png?w=300&h=300&fit=crop",
         story: "Made saving accessible to millions of Nigerians through technology. PiggyVest now manages billions in savings for everyday Nigerians."
@@ -617,7 +625,16 @@ const CodingPresentation = () => {
             <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/20">
               <h2 className="text-4xl md:text-5xl font-bold mb-3">{slide.hero.name}</h2>
               <p className="text-2xl md:text-3xl text-cyan-300 font-semibold mb-2">{slide.hero.achievement}</p>
-              <p className="text-xl text-orange-300 mb-4">{slide.hero.company}</p>
+              <div className="flex items-center gap-3 mb-4">
+                {slide.hero.companyLogo && (
+                  <img 
+                    src={slide.hero.companyLogo} 
+                    alt={slide.hero.company}
+                    className="h-8 md:h-10 object-contain bg-white/90 px-3 py-1 rounded-lg"
+                  />
+                )}
+                <p className="text-xl text-orange-300">{slide.hero.company}</p>
+              </div>
               <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-6">
                 {slide.hero.description}
               </p>
