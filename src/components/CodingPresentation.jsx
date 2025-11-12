@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronRight, ChevronLeft, Code, Globe, Lightbulb, Rocket, Brain, Sparkles, Users, GraduationCap } from 'lucide-react';
+import Confetti from 'react-confetti';
 
 const CodingPresentation = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [showConfetti, setShowConfetti] = useState(false);
 
   const slides = [
     {
@@ -413,6 +415,19 @@ const CodingPresentation = () => {
     return () => globalThis.removeEventListener('keydown', handleKeyPress);
   }, [currentSlide, slides.length]);
 
+  // Trigger confetti on Goodbye slide
+  useEffect(() => {
+    const goodbyeSlideIndex = slides.findIndex(slide => slide.title === "Goodbye! 👋");
+    if (currentSlide === goodbyeSlideIndex) {
+      setShowConfetti(true);
+      // Stop confetti after 5 seconds
+      const timer = setTimeout(() => setShowConfetti(false), 5000);
+      return () => clearTimeout(timer);
+    } else {
+      setShowConfetti(false);
+    }
+  }, [currentSlide, slides]);
+
   const nextSlide = () => {
     if (currentSlide < slides.length - 1) {
       setCurrentSlide(currentSlide + 1);
@@ -719,6 +734,16 @@ const CodingPresentation = () => {
 
   return (
     <div className="min-h-screen h-screen bg-gray-900 flex flex-col relative overflow-hidden">
+      {/* Confetti Effect */}
+      {showConfetti && (
+        <Confetti
+          width={window.innerWidth}
+          height={window.innerHeight}
+          recycle={false}
+          numberOfPieces={500}
+        />
+      )}
+      
       {/* Main Slide - Full Screen */}
       <div className={`flex-1 bg-gradient-to-br ${slide.bg} flex items-center justify-center relative overflow-hidden`}>
         {/* Background Image */}
